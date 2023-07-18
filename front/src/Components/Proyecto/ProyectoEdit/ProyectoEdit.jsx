@@ -17,7 +17,6 @@ export default function ProyectoEdit({ e, id }) {
 
   return (
     <>
-   
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Card sx={{ width: "600px" }}>
           <Box sx={{ display: "flex" }}>
@@ -36,17 +35,7 @@ export default function ProyectoEdit({ e, id }) {
                 {e.titulo}{" "}
                 {/* Replace with the appropriate property from the proyecto */}
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <Typography
-                  variant="subtitle1"
-                  color="text.secondary"
-                  component="div"
-                  sx={{ marginTop: theme.spacing(2) }}
-                >
-                  {e.sinopsis}{" "}
-                  {/* Replace with the appropriate property from the proyecto */}
-                </Typography>
-              </Box>
+
               <Box
                 className="bottom-group"
                 sx={{
@@ -69,7 +58,12 @@ export default function ProyectoEdit({ e, id }) {
                 >
                   <Button>Leer</Button>
                 </Link>
-                <Button variant="contained">Editar</Button>
+                <Link
+                  to={`/proyectos/${proyecto_id}/editar`}
+                  state={{ data: e }}
+                >
+                  <Button variant="contained">Editar</Button>
+                </Link>
               </Box>
             </CardContent>
           </Box>

@@ -14,6 +14,7 @@ export default function NuevoProyecto() {
   const [sinopsis, setSinopsis] = useState("");
   const [proyecto, setProyecto] = useState(null);
 
+
   const navigation = useNavigate();
 
   const handleTitulo = (e) => {

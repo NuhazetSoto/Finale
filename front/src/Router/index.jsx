@@ -9,6 +9,7 @@ import ListaProyectos from "../Components/ListaProyectos/ListaProyectos";
 import VistaProyecto from "../Components/VistaProyecto/VistaProyecto";
 import TodosProyctos from "../Pages/TodosProyectos/TodosProyectos";
 import ListaUsuario from "../Components/ListaUsuario/ListaUsuario";
+import VistaEdit from "../Components/VistaProyecto/VistaEdit";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/usuario/:usuario_id/misproyectos",
     element: <ListaUsuario />,
+  },
+  {
+    path:"/proyectos/:proyecto_id/editar",
+    element: <VistaEdit />
   },
   {
     path: "/usuario/:usuario_id/misproyectos/nuevo",
