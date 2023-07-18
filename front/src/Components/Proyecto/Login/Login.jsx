@@ -30,12 +30,13 @@ function Login() {
 
   const logIn = async () => {
     const data = await login(email, contraseña);
-    const id = localStorage.getItem('id')
+    console.log(data);
+    const id = localStorage.getItem("id");
     if (!localStorage.getItem("token"))
       alert("Error: Usuario o contraseña invalidos");
     else {
-          navigate(`usuario/${id}/misproyectos`);
-     }
+      navigate(`usuario/${id}/misproyectos`);
+    }
   };
 
   function handleClick() {

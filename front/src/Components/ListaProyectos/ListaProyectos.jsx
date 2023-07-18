@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { allProyectos } from "../../Services/proyecto.services";
+import {
+  allProyectos,
+  allProyectosUsuario,
+} from "../../Services/proyecto.services";
 import { Button, Grid } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Proyecto from "../Proyecto/Proyecto";
@@ -10,7 +13,7 @@ function ListaProyectos() {
 
   const handleProyectos = async () => {
     console.log(usuario_id);
-    const result = await allProyectos(usuario_id);
+    const result = await allProyectos();
     console.log(result);
     setProyectos(result);
   };
@@ -22,9 +25,9 @@ function ListaProyectos() {
   const mapProyectos = () => {
     return proyectos.map((e) => {
       return (
-        <Grid item key={e.id} xs={12}  lg={6}>
-            {e.id}
-          <Proyecto e={e} id={e.id}/>
+        <Grid item key={e.id} xs={12} lg={6}>
+          {e.id}
+          <Proyecto e={e} id={e.id} />
         </Grid>
       );
     });

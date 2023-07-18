@@ -10,18 +10,34 @@ import { useState } from "react";
 import { findProyecto } from "../../Services/proyecto.services";
 import { useLocation, useParams } from "react-router-dom";
 
-export default function VistaProyecto({proyecto_id}) {
+export default function VistaProyecto({ proyecto_id }) {
   const theme = useTheme();
   console.log(proyecto_id);
-  const location = useLocation()
+  const location = useLocation();
 
-  const data = location.state?.data
-  const proyecto = data
-  console.log(data)
+  const data = location.state?.data;
+  const proyecto = data;
+  console.log(data);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "center", flexDirection:'column',alignItems:'center'}}>
-        <Card sx={{ width: "600px", marginTop:'5%' }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Card sx={{ width: "600px", marginTop: "5%" }}>
           <Box sx={{ display: "flex" }}>
             <CardMedia
               component="img"
@@ -52,7 +68,18 @@ export default function VistaProyecto({proyecto_id}) {
             </CardContent>
           </Box>
         </Card>
-      <Box className='A-4' dangerouslySetInnerHTML={{ __html: proyecto.contenido }} sx={{marginTop:'5%',border:'solid', width:'70%',minHeight:'1287px', display:'flex'}}></Box>
+        <Box
+          className="A-4"
+          dangerouslySetInnerHTML={{ __html: proyecto.contenido }}
+          sx={{
+            marginTop: "5%",
+            width: "70%",
+            minHeight: "1287px",
+            display: "flex",
+            flexDirection: "column",
+            wordBreak: "break-all",
+          }}
+        ></Box>
       </Box>
     </>
   );

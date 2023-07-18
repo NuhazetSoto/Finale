@@ -7,8 +7,8 @@ import ContenidoProyecto from "../Components/Proyecto/ContenidoProyecto/Contenid
 import TextEditor from "../Components/Proyecto/TextEditor/TextEditor";
 import ListaProyectos from "../Components/ListaProyectos/ListaProyectos";
 import VistaProyecto from "../Components/VistaProyecto/VistaProyecto";
-
-
+import TodosProyctos from "../Pages/TodosProyectos/TodosProyectos";
+import ListaUsuario from "../Components/ListaUsuario/ListaUsuario";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/usuario/:usuario_id/misproyectos",
-    element: <ListaProyectos />,
+    element: <ListaUsuario />,
   },
   {
     path: "/usuario/:usuario_id/misproyectos/nuevo",
@@ -32,8 +32,12 @@ const router = createBrowserRouter([
     element: <TextEditor />,
   },
   {
-    path: "/usuario/:usario_id/proyectos/:proyecto_id",
+    path: "usuario/:usuario_id/proyectos/:proyecto_id",
     element: <VistaProyecto />,
+  },
+  {
+    path: "/todos",
+    element: <ListaProyectos />,
   },
 ]);
 

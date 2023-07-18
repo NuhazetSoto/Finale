@@ -5,3 +5,8 @@ export const api = axios.create({
   //import.meta.env.VITE_API_URL,
   //timeout: 3000
 })
+
+export const apiCloud = axios.create({
+  baseURL: 'https://api.cloudinary.com/v1_1/dhbarideh'
+})
+
