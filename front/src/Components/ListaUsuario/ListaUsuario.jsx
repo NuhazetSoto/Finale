@@ -7,6 +7,7 @@ import { Button, Grid } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Proyecto from "../Proyecto/Proyecto";
 import ProyectoEdit from "../Proyecto/ProyectoEdit/ProyectoEdit";
+import Header from "../Header/Header";
 
 function ListaUsuario() {
   const { usuario_id } = useParams();
@@ -27,7 +28,6 @@ function ListaUsuario() {
     return proyectos.map((e) => {
       return (
         <Grid item key={e.id} xs={12} lg={6}>
-          {e.id}
           <ProyectoEdit e={e} id={e.id} />
         </Grid>
       );
@@ -35,12 +35,15 @@ function ListaUsuario() {
   };
 
   return (
-    <Grid container spacing={2}>
-      {mapProyectos()}
-      <Link to={`/usuario/${usuario_id}/misproyectos/nuevo`}>
-        <Button>Nuevo Proyecto</Button>
-      </Link>
-    </Grid>
+    <>
+    <Header/>
+      <Grid sx={{display: 'flex', flexDirection:'column'}}container spacing={2}>
+        {mapProyectos()}
+        <Link to={`/usuario/${usuario_id}/misproyectos/nuevo`}>
+          <Button>Nuevo Proyecto</Button>
+        </Link>
+      </Grid>
+    </>
   );
 }
 

@@ -24,7 +24,7 @@ function TodosProyectos() {
         <>
        
           <Grid item key={e.id} xs={12} lg={6}>
-            {e.id}
+            
             <Proyecto e={e} id={e.id} />
           </Grid>
         </>
