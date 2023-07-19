@@ -46,7 +46,7 @@ export default function VistaEdit({ proyecto_id }) {
                 alignItems: "center",
               }}
             >
-              <TextField required label="titulo" defaultValue={data.titulo} onChange={(e)=> proyecto.titulo = e.target.value}/>
+              <TextField required label="titulo" defaultValue={data.titulo} onChange={(e)=> proyecto.titulo = e.target}/>
             </CardContent>
           </Box>
         </Card>
